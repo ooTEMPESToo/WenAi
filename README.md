@@ -28,10 +28,3 @@ WenAi is a modern, full-stack web application built with **Next.js 14**, **NextA
 | **Deployment** | Vercel |
 
 ---
-
-## ⚙️ Setup & Installation
-
-### 1️⃣ Clone the Repository
-```bash
-git clone https://github.com/<your-username>/WenAi.git
-cd WenAi
