@@ -37,8 +37,28 @@ export const startup = defineType({
     }),
     defineField({
       name: "image",
-      type: "url",
-      validation: (Rule) => Rule.required(),
+      title: "Startup Image",
+      type: "object",
+      fields: [
+        defineField({
+          name: "assetRef",
+          title: "Upload Image",
+          type: "image",
+          options: { hotspot: true },
+        }),
+        defineField({
+          name: "url",
+          title: "Image URL",
+          type: "url",
+        }),
+      ],
+      validation: (Rule) =>
+        Rule.custom((field) => {
+          if (!field?.assetRef && !field?.url) {
+            return "Please upload an image or provide a valid image URL";
+          }
+          return true;
+        }),
     }),
     defineField({
       name: "pitch",
